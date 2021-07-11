@@ -67,6 +67,7 @@ class TestDist(unittest.TestCase):
     def test_third(self):
         '''
         TestDist:
+        Pomiń element bardziej odległy (czyli drugi)
         '''
         obk = Skrzynka()
         obk.add(2)
@@ -77,6 +78,8 @@ class TestDist(unittest.TestCase):
     def test_four(self):
         '''
         TestDist:
+        Jeśli element jest już na liście jako
+        pierwszy, to zignoruj ten nowy element.
         '''
         obk = Skrzynka()
         obk.add(2)
@@ -87,6 +90,8 @@ class TestDist(unittest.TestCase):
     def test_fifth(self):
         '''
         TestDist:
+        Jeśli element jest już na liście w dowolnym
+        miejsciu, to zignoruj ten nowy element.
         '''
         obk = Skrzynka()
         obk.add(2)
@@ -97,6 +102,8 @@ class TestDist(unittest.TestCase):
     def test_sixth(self):
         '''
         TestDist:
+        Wyrzuć wszystkie elementy jeśli czas jest
+        większy niż 10 sekund
         '''
         obk = Skrzynka()
         obk.add(2)
