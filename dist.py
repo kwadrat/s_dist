@@ -10,6 +10,10 @@ import sys
 import unittest
 
 
+def thresh(value):
+    return (6 * (value + 100) / 50)
+
+
 class Box:
     def __init__(self):
         '''
@@ -122,6 +126,13 @@ class TestDist(unittest.TestCase):
         '''
         obk = Box()
         self.assertEqual(obk.get(), None)
+
+    def test_ninth(self):
+        '''
+        TestDist:
+        '''
+        self.assertEqual(thresh(15), 13.8)
+        self.assertEqual(thresh(16), 13.92)
 
 
 if __name__ == '__main__':
