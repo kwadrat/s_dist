@@ -20,7 +20,7 @@ class Skrzynka:
         '''
         Skrzynka:
         '''
-        self.value = value
+        self.ls.append(value)
 
     def get(self):
         '''
