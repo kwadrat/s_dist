@@ -9,16 +9,16 @@ Template file for testing functions and classes
 import sys
 import unittest
 
-class Skrzynka:
+class Box:
     def __init__(self):
         '''
-        Skrzynka:
+        Box:
         '''
         self.ls = []
 
     def add(self, value, tm=None):
         '''
-        Skrzynka:
+        Box:
         Dodaj kolejną wartość do listy
         '''
         if tm is not None and tm > 10:
@@ -36,7 +36,7 @@ class Skrzynka:
 
     def get(self):
         '''
-        Skrzynka:
+        Box:
         Wyznacz średnią wartość listy
         '''
         if self.ls:
@@ -50,7 +50,7 @@ class TestDist(unittest.TestCase):
         '''
         TestDist:
         '''
-        obk = Skrzynka()
+        obk = Box()
         obk.add(10, 0)
         self.assertEqual(obk.get(), 10)
         obk.add(12)
@@ -60,7 +60,7 @@ class TestDist(unittest.TestCase):
         '''
         TestDist:
         '''
-        obk = Skrzynka()
+        obk = Box()
         obk.add(20)
         obk.add(30)
         self.assertEqual(obk.get(), 25)
@@ -72,7 +72,7 @@ class TestDist(unittest.TestCase):
         TestDist:
         Pomiń element bardziej odległy (czyli drugi)
         '''
-        obk = Skrzynka()
+        obk = Box()
         obk.add(2)
         obk.add(10)
         obk.add(0)
@@ -84,7 +84,7 @@ class TestDist(unittest.TestCase):
         Jeśli element jest już na liście jako
         pierwszy, to zignoruj ten nowy element.
         '''
-        obk = Skrzynka()
+        obk = Box()
         obk.add(2)
         obk.add(10)
         obk.add(2)
@@ -96,7 +96,7 @@ class TestDist(unittest.TestCase):
         Jeśli element jest już na liście w dowolnym
         miejsciu, to zignoruj ten nowy element.
         '''
-        obk = Skrzynka()
+        obk = Box()
         obk.add(2)
         obk.add(10)
         obk.add(10)
@@ -108,7 +108,7 @@ class TestDist(unittest.TestCase):
         Wyrzuć wszystkie elementy jeśli czas jest
         większy niż 10 sekund
         '''
-        obk = Skrzynka()
+        obk = Box()
         obk.add(2)
         obk.add(10)
         obk.add(30, 12)
@@ -119,7 +119,7 @@ class TestDist(unittest.TestCase):
         TestDist:
         Obsługa pustej listy
         '''
-        obk = Skrzynka()
+        obk = Box()
         self.assertEqual(obk.get(), None)
 
 
