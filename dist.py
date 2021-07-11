@@ -117,6 +117,7 @@ class TestDist(unittest.TestCase):
     def test_seventh(self):
         '''
         TestDist:
+        Obsługa pustej listy
         '''
         obk = Skrzynka()
         self.assertEqual(obk.get(), None)
