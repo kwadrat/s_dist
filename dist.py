@@ -23,7 +23,12 @@ class Skrzynka:
         '''
         self.ls.append(value)
         if len(self.ls) > 2:
-            del self.ls[0]
+            if (
+                    abs(self.ls[2] - self.ls[0]) >
+                    abs(self.ls[2] - self.ls[1])):
+                del self.ls[0]
+            else:
+                del self.ls[1]
 
     def get(self):
         '''
@@ -54,6 +59,16 @@ class TestDist(unittest.TestCase):
         self.assertEqual(obk.get(), 25)
         obk.add(40)
         self.assertEqual(obk.get(), 35)
+
+    def test_third(self):
+        '''
+        TestDist:
+        '''
+        obk = Skrzynka()
+        obk.add(2)
+        obk.add(10)
+        obk.add(0)
+        self.assertEqual(obk.get(), 1)
 
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'test':
