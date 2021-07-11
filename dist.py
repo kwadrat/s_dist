@@ -22,6 +22,8 @@ class Skrzynka:
         Dodaj kolejną wartość do listy
         '''
         self.ls.append(value)
+        if len(self.ls) > 2:
+            del self.ls[0]
 
     def get(self):
         '''
@@ -50,6 +52,8 @@ class TestDist(unittest.TestCase):
         obk.add(20)
         obk.add(30)
         self.assertEqual(obk.get(), 25)
+        obk.add(40)
+        self.assertEqual(obk.get(), 35)
 
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'test':
