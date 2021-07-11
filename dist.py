@@ -39,7 +39,10 @@ class Skrzynka:
         Skrzynka:
         Wyznacz średnią wartość listy
         '''
-        return sum(self.ls) / (len(self.ls))
+        if self.ls:
+            return sum(self.ls) / (len(self.ls))
+        else:
+            return None
 
 
 class TestDist(unittest.TestCase):
@@ -110,6 +113,13 @@ class TestDist(unittest.TestCase):
         obk.add(10)
         obk.add(30, 12)
         self.assertEqual(obk.get(), 30)
+
+    def test_seventh(self):
+        '''
+        TestDist:
+        '''
+        obk = Skrzynka()
+        self.assertEqual(obk.get(), None)
 
 
 if __name__ == '__main__':
