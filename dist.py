@@ -10,6 +10,12 @@ import sys
 import unittest
 
 class Skrzynka:
+    def __init__(self):
+        '''
+        Skrzynka:
+        '''
+        self.ls = []
+
     def add(self, value):
         '''
         Skrzynka:
