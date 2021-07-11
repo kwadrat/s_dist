@@ -16,20 +16,23 @@ class Skrzynka:
         '''
         self.ls = []
 
-    def add(self, value):
+    def add(self, value, tm=None):
         '''
         Skrzynka:
         Dodaj kolejną wartość do listy
         '''
-        if value not in self.ls:
-            self.ls.append(value)
-            if len(self.ls) > 2:
-                if (
-                        abs(self.ls[2] - self.ls[0]) >
-                        abs(self.ls[2] - self.ls[1])):
-                    del self.ls[0]
-                else:
-                    del self.ls[1]
+        if tm is not None and tm > 10:
+            self.ls = [value]
+        else:
+            if value not in self.ls:
+                self.ls.append(value)
+                if len(self.ls) > 2:
+                    if (
+                            abs(self.ls[2] - self.ls[0]) >
+                            abs(self.ls[2] - self.ls[1])):
+                        del self.ls[0]
+                    else:
+                        del self.ls[1]
 
     def get(self):
         '''
@@ -45,7 +48,7 @@ class TestDist(unittest.TestCase):
         TestDist:
         '''
         obk = Skrzynka()
-        obk.add(10)
+        obk.add(10, 0)
         self.assertEqual(obk.get(), 10)
         obk.add(12)
         self.assertEqual(obk.get(), 11)
@@ -90,6 +93,16 @@ class TestDist(unittest.TestCase):
         obk.add(10)
         obk.add(10)
         self.assertEqual(obk.get(), 6)
+
+    def test_sixth(self):
+        '''
+        TestDist:
+        '''
+        obk = Skrzynka()
+        obk.add(2)
+        obk.add(10)
+        obk.add(30, 12)
+        self.assertEqual(obk.get(), 30)
 
 
 if __name__ == '__main__':
