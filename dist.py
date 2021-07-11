@@ -26,7 +26,7 @@ class Box:
         Box:
         Dodaj kolejną wartość do listy
         '''
-        if tm is not None and tm > 10:
+        if tm is not None and tm > thresh(value):
             self.ls = [value]
         else:
             if value not in self.ls:
@@ -117,7 +117,7 @@ class TestDist(unittest.TestCase):
         obk.add(2)
         obk.add(10)
         obk.add(30, 12)
-        self.assertEqual(obk.get(), 30)
+        self.assertEqual(obk.get(), 20)
 
     def test_seventh(self):
         '''
