@@ -19,12 +19,14 @@ class Skrzynka:
     def add(self, value):
         '''
         Skrzynka:
+        Dodaj kolejną wartość do listy
         '''
         self.ls.append(value)
 
     def get(self):
         '''
         Skrzynka:
+        Wyznacz średnią wartość listy
         '''
         return sum(self.ls) / (len(self.ls))
 
