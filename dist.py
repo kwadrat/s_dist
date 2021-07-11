@@ -9,6 +9,7 @@ Template file for testing functions and classes
 import sys
 import unittest
 
+
 class Box:
     def __init__(self):
         '''
@@ -28,8 +29,8 @@ class Box:
                 self.ls.append(value)
                 if len(self.ls) > 2:
                     if (
-                            abs(self.ls[2] - self.ls[0]) >
-                            abs(self.ls[2] - self.ls[1])):
+                            abs(self.ls[2] - self.ls[0])
+                            > abs(self.ls[2] - self.ls[1])):
                         del self.ls[0]
                     else:
                         del self.ls[1]
