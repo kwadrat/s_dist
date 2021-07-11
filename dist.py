@@ -16,6 +16,13 @@ class Skrzynka:
         '''
         pass
 
+    def get(self):
+        '''
+        Skrzynka:
+        '''
+        return 10
+
+
 class TestDist(unittest.TestCase):
     def test_something(self):
         '''
@@ -23,7 +30,7 @@ class TestDist(unittest.TestCase):
         '''
         obk = Skrzynka()
         obk.add(10)
-        self.assertEqual(1, 1)
+        self.assertEqual(obk.get(), 10)
 
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'test':
