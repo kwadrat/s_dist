@@ -138,3 +138,6 @@ class TestDist(unittest.TestCase):
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'test':
         unittest.main(argv=sys.argv[:1])
+    else:
+        for i in range(0, 30):
+            print('%s %s' % (i, thresh(i)))
