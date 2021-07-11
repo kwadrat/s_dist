@@ -127,6 +127,18 @@ class TestDist(unittest.TestCase):
         obk = Box()
         self.assertEqual(obk.get(), None)
 
+    def test_eighth(self):
+        '''
+        TestDist:
+        '''
+        for i in range(30, 0, -1):
+            print(i)
+            obk = Box()
+            obk.add(2)
+            obk.add(10)
+            obk.add(30, i)
+            self.assertEqual(obk.get(), 30)
+
     def test_ninth(self):
         '''
         TestDist:
