@@ -1,2 +1,2 @@
 # s_dist
-Medium distance
+Liczenie średniej odległości
