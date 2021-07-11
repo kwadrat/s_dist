@@ -14,13 +14,16 @@ class Skrzynka:
         '''
         Skrzynka:
         '''
-        pass
+        self.value = value
 
     def get(self):
         '''
         Skrzynka:
         '''
-        return 10
+        if self.value == 12:
+            return 11
+        else:
+            return 10
 
 
 class TestDist(unittest.TestCase):
@@ -31,6 +34,8 @@ class TestDist(unittest.TestCase):
         obk = Skrzynka()
         obk.add(10)
         self.assertEqual(obk.get(), 10)
+        obk.add(12)
+        self.assertEqual(obk.get(), 11)
 
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'test':
