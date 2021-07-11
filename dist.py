@@ -26,10 +26,7 @@ class Skrzynka:
         '''
         Skrzynka:
         '''
-        if self.value == 12:
-            return 11
-        else:
-            return 10
+        return sum(self.ls) / (len(self.ls))
 
 
 class TestDist(unittest.TestCase):
@@ -42,6 +39,15 @@ class TestDist(unittest.TestCase):
         self.assertEqual(obk.get(), 10)
         obk.add(12)
         self.assertEqual(obk.get(), 11)
+
+    def test_second(self):
+        '''
+        TestDist:
+        '''
+        obk = Skrzynka()
+        obk.add(20)
+        obk.add(30)
+        self.assertEqual(obk.get(), 25)
 
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'test':
