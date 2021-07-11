@@ -21,7 +21,7 @@ class Skrzynka:
         Skrzynka:
         Dodaj kolejną wartość do listy
         '''
-        if not self.ls or value != self.ls[0]:
+        if value not in self.ls:
             self.ls.append(value)
             if len(self.ls) > 2:
                 if (
@@ -79,6 +79,16 @@ class TestDist(unittest.TestCase):
         obk.add(2)
         obk.add(10)
         obk.add(2)
+        self.assertEqual(obk.get(), 6)
+
+    def test_fifth(self):
+        '''
+        TestDist:
+        '''
+        obk = Skrzynka()
+        obk.add(2)
+        obk.add(10)
+        obk.add(10)
         self.assertEqual(obk.get(), 6)
 
 
