@@ -10,7 +10,11 @@ import sys
 import unittest
 
 class Skrzynka:
-    pass
+    def add(self, value):
+        '''
+        Skrzynka:
+        '''
+        pass
 
 class TestDist(unittest.TestCase):
     def test_something(self):
@@ -18,6 +22,7 @@ class TestDist(unittest.TestCase):
         TestDist:
         '''
         obk = Skrzynka()
+        obk.add(10)
         self.assertEqual(1, 1)
 
 if __name__ == '__main__':
