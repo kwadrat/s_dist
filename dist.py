@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-'''
-Template file for testing functions and classes
-./dist.py test; red_green_bar.py $? $COLUMNS
-'''
-
 import sys
 import unittest
 
